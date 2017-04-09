@@ -7,7 +7,7 @@ The application can be defined on two process :
   - a core process that manage all interaction with other contact;
   - an GUI process that display and take order from the user.
   
-<img href="https://docs.google.com/drawings/d/1QxrPv2GBXfWVg0UZ9v2EOpYFAVSnTN4NwQdItwjrMog/edit?usp=sharing"/>
+![alt tag](https://docs.google.com/drawings/d/1QxrPv2GBXfWVg0UZ9v2EOpYFAVSnTN4NwQdItwjrMog/edit?usp=sharing)
 
 ## Protocol
 Each application have several couples of public/private key :
