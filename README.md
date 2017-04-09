@@ -50,12 +50,19 @@ This step only help the application to be seen by others and is done regulary.
 ### Let's talk together (TCP mode)
 After some UDP messages exchanged, a list of contact should be available and the user can send a request to open a discussion.
 
+![alt tag](https://docs.google.com/drawings/d/18N_1828-j1j96WrsqvAtdIF_4W71BCFZOvxV8uAnnlI/pub?w=1014&h=959)
 
-Then when an user wants to open a conversation to another, it create an TCP tunnel to communicate.
+As long as new couples of keys aren't been created in both sides and publics keys aren't been communicated, all the messages will be crypted by using the general couple of keys of each application.
 
-At this time, a couple of public/private key specific to this connection is created and the client send an request of conversation including this public key.
+When an user wants to open a conversation to another, it create an TCP tunnel to communicate. 
+But before that, a secret password have to be transmitted by other secure transmission way to recognize the distant user behind the application.
 
-The distant user has the choice to keep the connection or to refuse it. If it accept the conversation, it send its public key created for this connection. In the other case, it will just send an error message.
+Then a couple of public/private key specific to this discussion is created and the user application send an request to the distant application including this public key and the prompted password.
+
+Depending to the secret password receive, the distant user has the choice to keep the connection or to refuse it.
+If it is the right password, it send its public key created for this discussion. In the other case, it will close the connection.
+
+At the end of this step a discussion between the two users is created. They can now 
 
 ### What's up
 The conversation established, both users can send signed and crypted messages by using its private key and the distant user's public key.
