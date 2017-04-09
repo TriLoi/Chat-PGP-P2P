@@ -39,7 +39,7 @@ For that, there are two ways:
  - the core process send an UDP broadcast request to be seen by other contacts and wait for responses;
  - when the core process receive an UDP request from other contacts.
  
-![alt tag](https://docs.google.com/drawings/d/1Ztd4E9MDaGBN20A3rO09nqmKqa9q4oCFvaX7XVc6CbI/pub?w=670&h=366)
+![alt tag](https://docs.google.com/drawings/d/1Ztd4E9MDaGBN20A3rO09nqmKqa9q4oCFvaX7XVc6CbI/pub?w=2020&h=597)
  
 For this recognition task, the general couple of keys will be used to authentificate each contact when discussion request is made.
 The UDP broadcast message contains the owner public key and the UDP response message contains the distant contact public key.
