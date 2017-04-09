@@ -64,7 +64,7 @@ If it is the right password, it send its public key created for this discussion.
 
 At the end of this step a discussion between the two users is created. They can now 
 
-### 2.C. What's up
+### 2.C. What's up (TCP mode)
 The discussion created, both users can send signed and crypted messages by using its private key and the distant user's public key.
 
 ![alt tag](https://docs.google.com/drawings/d/13NqTWwHt7ozKSw3iij0Wb2Qfr89rIuoA4ILcz4T9pOY/pub?w=1009&h=486)
