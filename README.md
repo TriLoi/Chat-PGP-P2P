@@ -2,10 +2,21 @@
 The goal of this project is to create a P2P chat application secure.
 It will use the PGP concept to secure its communications.
 
+## Local architecture
+The application can be defined on two process :
+  - a core process that manage all interaction with other contact;
+  - an GUI process that display and take order from the user.
+  
+<img href="https://docs.google.com/drawings/d/1QxrPv2GBXfWVg0UZ9v2EOpYFAVSnTN4NwQdItwjrMog/edit?usp=sharing"/>
+
 ## Protocol
+Each application have several couples of public/private key :
+  - one in general to begin a discussion and to authentificate every messages from this contact;
+  - one for each discussion to separe each of them.
+
 The client and server have many roles.
 
-### Who's there
+### Who's there (UDP mode)
 First of them is to upload a list of contacts arround him.
 
 It's just like upload a file: the client send a request to another user then the distant server send a list of its contacts including itself.
@@ -16,7 +27,7 @@ At this moment, a list of contact is available and the user can send a request t
 
 This step is done regulary by using UDP packets.
 
-### Let's talk together
+### Let's talk together (TCP mode)
 Then when an user wants to open a conversation to another, it create an TCP tunnel to communicate.
 
 At this time, a couple of public/private key specific to this connection is created and the client send an request of conversation including this public key.
