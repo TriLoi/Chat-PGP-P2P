@@ -95,4 +95,4 @@ In our case, the application can connect to this third-party server to get a lis
 Then it send the UDP request on each contact.
 Of course, by receiving the request of contacts, this third-party server should add the requested user to its list of contacts for few times.
 
-The application should send this kind of request regulary to get more contacts. By this way, it also declare to the server that it still available for contact others.
+The application should send this kind of request regulary to get more contacts. By this way, it also declare to the server that it still available to discuss with others.
