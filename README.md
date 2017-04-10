@@ -34,7 +34,7 @@ Each application have several couples of public/private keys :
 The client and server have many roles.
 
 ### 2.A. Who's there (UDP mode)
-First of them is to find contacts arround.
+First of them is to find neighbours arround.
 For that, there are two ways:
  - the core process send an UDP broadcast request to be seen by other contacts and wait for responses;
  - when the core process receive an UDP request from other contacts.
@@ -70,14 +70,29 @@ The discussion created, both users can send signed and crypted messages by using
 ![alt tag](https://docs.google.com/drawings/d/13NqTWwHt7ozKSw3iij0Wb2Qfr89rIuoA4ILcz4T9pOY/pub?w=1009&h=486)
 
 ## 3. Peer to peer on internet
+The main problem of this project is probably to find contacts arround us.
+When the application is only used into an internal network, that isn't problematic : we can send a broadcast request like explain in the part 2.A.
+But when we want to use it outside, a broadcast request cannot be done like it. Firewall usually bloc this kind of requests.
+
+Even if broadcast requests is impossible to find some neightbors, a UDP connection with them still be possible.
+By using a specific IP address, two neighbours can be join.
+Then a discussion could be created between the two users like descript at part 2.B.
+
+That why, we need to find other way to find some neightbors by getting some IP address.
 
 ### 3.A. Using a file
-////
-First of them is to upload a list of contacts arround him.
+One solution could be a list of contacts which contains IP address of potential neighbours.
+This kind of list is already used by bitorrent applications which use a torrent file to connect to others.
 
-It's just like upload a file: the client send a request to another user then the distant server send a list of its contacts including itself.
-
-Two servers can have differents contacts lists. That's why the client will group all these contacts in a single contacts list.
-////
+In our case, instead of send one UDP brocast request, the application send the same UDP request on each contact from the list.
+This list can also be completed with the neighbours' list content to get more contacts. For that, when the client send a request to another user, the distant server send a list of its contacts in addition to its public key.
 
 ### 3.B. Using a third-party server
+Another solution could be a third-party server which contains a regulary updated list of contacts.
+This kind of system is already used by applications such as Facebook or Twitter for some functionalities.
+
+In our case, the application can connect to this third-party server to get a list of contacts.
+Then it send the UDP request on each contact.
+Of course, by receiving the request of contacts, this third-party server should add the requested user to its list of contacts for few times.
+
+The application should send this kind of request regulary to get more contacts. By this way, it also declare to the server that it still available for contact others.
