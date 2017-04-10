@@ -29,10 +29,16 @@ class GpgManager(object):
         
         key = self._gpg.gen_key(input_data)
         
-        print(key.data)
         ascii_armored_public_keys = self._gpg.export_keys(key)
         ascii_armored_private_keys = self._gpg.export_keys(key, True)
         with open('mykeyfile.asc', 'w') as f:
             f.write(ascii_armored_public_keys)
             f.write(ascii_armored_private_keys)
+            
+    def encrypt(self, key, message):
+        return ""
+    
+    def decrypt(self, key, message):
+        return ""
+    
     pass
