@@ -52,7 +52,7 @@ After some UDP messages exchanged, a list of contact should be available and the
 
 ![alt tag](https://docs.google.com/drawings/d/18N_1828-j1j96WrsqvAtdIF_4W71BCFZOvxV8uAnnlI/pub?w=1014&h=959)
 
-As long as new couples of keys aren't been created in both sides and publics keys aren't been communicated, all the messages will be crypted by using the general couple of keys of each application.
+As long as new couples of keys aren't been created in both sides and publics keys aren't been communicated, all messages will be crypted by using the general couple of keys of each application.
 
 When an user wants to open a conversation to another, it create an TCP tunnel to communicate. 
 But before that, a secret password have to be transmitted by other secure transmission way to recognize the distant user behind the application.
