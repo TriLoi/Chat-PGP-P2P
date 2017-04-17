@@ -15,9 +15,9 @@ The application can be defined on two processes :
 The core process is a background process working like a server.
 
 When this process is launch, it open a UDP listener to add new contacts and a TCP listener to allow discussion requests. 
-It open also other TCP listeners for each new discussion created.
+It open also TCP connections for each new discussion created.
 
-It listen each listener to get new contacts and new messages.
+It listen each connections to get new contacts and new messages.
 It check also the GUI process for new message to send or for new discussion to create.
 Only non-block sockets is used to allow the core process to listen two or more listeners. 
 
@@ -29,6 +29,9 @@ The GUI process has an interface to communicate with the core process.
 A web interface, a command application, or a GUI application could be used independantly to the core process.
 
 It send requests regulary to the core process to keep its views updated.
+
+The GUI process should not contain any data like messages or connections sockets except its own socket to discuss with the core process.
+It will only retrieve informations from the core process to print them without memorize them.
 
 ## 2. Protocol
 Each application have several couples of public/private keys :
