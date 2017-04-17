@@ -3,9 +3,9 @@ Created on Mar 4, 2017
 
 @author: loi
 '''
-from model.StoppableThread import StoppableThread
-from model.Listener import Listener
-from model.Client import Client
+from model.socket.StoppableThread import StoppableThread
+from model.socket.Listener import Listener
+from model.socket.Client import Client
 
 class mserver(StoppableThread):
     def __init__(self):

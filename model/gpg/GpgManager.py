@@ -20,6 +20,7 @@ class GpgManager(object):
         self._gpg.encoding = 'utf-8'
         
     def createKey(self, name_email, passphrase):
+        ''' Doesn't work
         input_data = self._gpg.gen_key_input(
             key_type="RSA",
             key_length=1024,
@@ -34,11 +35,13 @@ class GpgManager(object):
         with open('mykeyfile.asc', 'w') as f:
             f.write(ascii_armored_public_keys)
             f.write(ascii_armored_private_keys)
+        '''
+        return None
             
     def encrypt(self, key, message):
-        return ""
+        return message
     
     def decrypt(self, key, message):
-        return ""
+        return message
     
     pass
