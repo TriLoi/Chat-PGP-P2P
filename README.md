@@ -79,6 +79,23 @@ The discussion created, both users can send signed and crypted messages by using
 A discussion between two users is considered as close when one of these users has close the TCP tunnel.
 The other user will see this closure when the core process will listen this tunnel or when he would try to send a message.
 
+### 2.D. Big announcement
+For some reason, we could imagine that someone wants to open a unique discussion with several users. To do so, two possibilities could easly be used :
+ - each user create one discussion per other concerned users and when one user wants to send a grouped messages, it send it using all opened discussions;
+ - one user is chosen as the administrator of the discussion and when one user want to send a grouped message, it send it to the admistrator which send it to all other concerned user.
+ 
+Both solution is quite simple to implement but is not really secure. In the first case, each user can get different list of users and so, an user might send a grouped message to a little part of the groupe only. In the second one, all users except the administrator don't really know which users are included in the discussion or not.
+
+Another way is to open an only one discussion for all these users. Instead of creating one discussion for both other users, only one would be created.
+To send a grouped message, an user have to encrypt the message by using its own private key and all public keys from all other users.
+To do so, an specific order between each key should be defined to allow both users to decrypt the sended message. It could be the order of add of user in this discussion.
+
+This method force each users to get all other public keys, and so, aware each users which users are concerned by this discussion.
+If a user doesn't know which users are in a discussion, it cannot send any message using this grouped discussion because some encryption operations are missing.
+
+A continous synchronization should also be made to preserve encryption order especially when a new user is added or removed.
+During this step of synchronization, each user have the choice to allow an user entrance or to refuse it, giving them a perfect control of the grouped discussion.
+
 ## 3. Peer to peer on internet
 The main problem of this project is probably to find contacts arround us.
 When the application is only used into an internal network, that isn't problematic : we can send a broadcast request like explain at part 2.A.
